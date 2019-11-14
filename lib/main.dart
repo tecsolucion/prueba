@@ -33,7 +33,14 @@ class _MyAppState extends State<MyApp> {
       print(e);
     }
 
-    final regions = <Region>[];
+    if (Platform.isIOS) {
+      regions.add(Region(
+          identifier: 'Apple Airlocate',
+          proximityUUID: 'E2C56DB5-DFFB-48D2-B060-D0F5A71096E0'));
+    } else {
+      // android platform, it can ranging out of beacon that filter all of Proximity UUID
+      regions.add(Region(identifier: 'com.beacon'));
+    }
 
 
     regions.add(Region(identifier: 'com.beacon'));
