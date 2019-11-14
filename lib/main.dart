@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
     }
 
     final regions = <Region>[];
-    
+
     if (Platform.isIOS) {
       regions.add(Region(
           identifier: 'Apple Airlocate',
