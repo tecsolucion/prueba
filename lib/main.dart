@@ -33,6 +33,8 @@ class _MyAppState extends State<MyApp> {
       print(e);
     }
 
+    final regions = <Region>[];
+    
     if (Platform.isIOS) {
       regions.add(Region(
           identifier: 'Apple Airlocate',
@@ -43,7 +45,6 @@ class _MyAppState extends State<MyApp> {
     }
 
 
-    regions.add(Region(identifier: 'com.beacon'));
 
 
     _streamRanging = flutterBeacon.ranging(regions).listen((result) {
