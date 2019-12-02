@@ -1,5 +1,5 @@
 name: flutter_beacon_example
-description: Demonstrates how to use the flutter_beacon plugin.
+description: boton de ayuda ibeacon
 publish_to: 'none'
 
 environment:
@@ -9,12 +9,40 @@ dependencies:
   flutter:
     sdk: flutter
 
+
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
 
+  http: any
+
+  share: ^0.6.0+1
+  fluttertoast: ^3.0.4
+  avatar_glow: ^0.1.0
+  bottom_navy_bar: ^3.0.0
+  shared_preferences: ^0.5.2
+  flutter_launcher_icons: '^0.7.3'
+  email_validator: '^1.0.0'
+  flutter_staggered_grid_view: "^0.2.7"
+
   flutter_beacon: ^0.2.4
 
+  location: ^2.3.5
+
+  native_contact_picker: ^0.0.6
+
+  move_to_background: ^0.2.0
+
+  wakelock: ^0.1.3
+
+
+
+
+flutter_icons:
+  image_path: "icon/MATLI.png"
+  android: true
+  ios: true
 
 dev_dependencies:
   flutter_test:
@@ -28,6 +56,18 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
 
+  assets:
+    - assets/logo.png
+    - assets/iztapalapa.png
+    - assets/CONTACTOS.png
+    - assets/CORAZON.png
+    - assets/ENTRADA.png
+    - assets/GUARDAR.png
+    - assets/MATLI.png
+    - assets/SALIR.png
+    - assets/BOCINA.png
+    - assets/USAR.png
+    - assets/como.png
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
