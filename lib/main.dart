@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_beacon_example/addContact.dart';
@@ -28,31 +26,48 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import 'package:move_to_background/move_to_background.dart';
 
-import 'package:wakelock/wakelock.dart';
+import 'dart:isolate';
 
+
+import 'package:permission_handler/permission_handler.dart';
+
+import 'package:temp_alarm_manager/android_alarm_manager.dart';
+
+
+void printHello() {
+  final DateTime now = new DateTime.now();
+  final int isolateId = Isolate.current.hashCode;
+  print("[$now] Hello, world! isolate=${isolateId} function='$printHello'");
+}
 
 
 main() async {
 
-  Timer.periodic(Duration(seconds: 120), (timer) {
-
-    //Wakelock.enable();
-
-    Wakelock.disable();
 
 
-  });
+
+  await PermissionHandler().requestPermissions([
+    PermissionGroup.location,PermissionGroup.contacts, PermissionGroup.locationAlways
+  ]);
+
+
+  final int helloAlarmID = 0;
+
+
+  await AndroidAlarmManager.periodic(const Duration(minutes: 1), helloAlarmID, printHello);
 
   return runApp(new MaterialApp(
     home: Login(),
   ));
+
+
+
+
+
+
+
+
 }
-
-
-
-
-
-
 
 
 
